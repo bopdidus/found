@@ -1,0 +1,11 @@
+.btn-success{
+    background-color: #1acf70 !important;
+}
+
+.panel-success .panel-heading{
+    background-color: #19bc9d !important;
+    color: white !important;
+}
+label{
+    color: black;
+}

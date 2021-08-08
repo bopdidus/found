@@ -1,0 +1,70 @@
+<div class="row" style="padding-top:10px; ">
+  <div class="col-md-3">
+      <select #cat name="" id="" class="form-control" (change)="currentCategory(cat.value)" >
+          <option *ngFor="let c of cats"  value="{{c.id}}">{{c.name}}</option>
+      </select>
+  </div>
+</div>
+<div class="row">
+    <div class="divider"></div>
+</div>
+<div class="row" style="padding-bottom:10px; ">
+  <div class="col-md-3">
+      <div class="checkbox" *ngFor="let s of sousCats">
+        <label><input type="checkbox" value="{{s.name}}" class="checkbox-success">{{s.name}}</label>
+      </div>
+     
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-4"> 
+        <div class="form-group">
+          <label for="">{{ 'start_date' | translate }}</label>
+          <input type="date" name="" id="" class="form-control">
+        </div>
+        
+      </div>
+      <div class="col-md-4">  
+        <div class="form-group">
+          <label for="">{{ 'end_date' | translate }}</label>
+          <input type="date" name="" id="" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <br>
+          <button type="submit" class="btn btn-task">{{ 'filter' | translate }}</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-md-4 item" *ngFor="let item of items">
+        <mat-card>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <h4>{{item.title}}</h4>
+            <p style="text-overflow: ellipsis;">
+              {{item.comments}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="btn btn-task" (click)="getView(item.id)" >{{ 'view' | translate }}</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      
+
+        
+    </div>
+   
+    <div class="row">
+      <mat-paginator [length]="15"
+               [pageSize]="3"
+               [pageSizeOptions]="[3, 6, 9, 12]"
+               (page)="pageEvent = $event">
+      </mat-paginator>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.container-fluid .row{
+  background-color: #19bc9d;
+  height: 200px;
+  padding-top: 50px;
+  color:white;
+}
+
+.container-fluid .row h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+}
+.container-fluid .row marquee{
+  font-size: 20px;
+}
+nav{
+  position: absolute;
+  top: 2px;
+  right: 4px;
+}
+ul li{
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+ul li .btn-link{
+  text-decoration: none;
+  color: white;
+  
+}

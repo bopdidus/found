@@ -1,0 +1,8 @@
+
+
+.container-fluid .container{
+  background-color: white;
+  margin-top: 15px;
+ /* box-shadow: .5px .5px .5px .5px grey;*/
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

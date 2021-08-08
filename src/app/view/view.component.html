@@ -1,0 +1,34 @@
+<div class="row" style="padding-bottom: 15px; padding-top:10px;">
+    <div class="col-md-4">
+        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <label for="" class="control-label col-md-2">Date of Publication:</label>
+            <div class="col-md-3">
+               <span>{{obj.publishedDate}}</span>
+            </div>
+           
+            <label for="" class="control-label col-md-3">Name:</label>
+            <div class="col-md-4">
+                <span style="float: right;">{{obj.title}}</span>
+            </div>
+                
+        </div>
+       
+        
+        <div class="form-group">
+            <label for="">Description</label>
+            <p style="text-align: justify;">
+               {{obj.comments}}
+            </p>
+        </div>
+        <div class="form-group">
+            <a routerLink="/App/home" mat-raised-button>
+                <mat-icon>skip_previous</mat-icon>
+                {{ 'back' | translate }}
+            </a>
+            <button type="submit" class="pull-right btn btn-task" (click)="openDialog()"> {{ 'belong' | translate }}</button>
+        </div>
+    </div>
+</div>

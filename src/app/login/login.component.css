@@ -1,0 +1,109 @@
+.container-fluid{
+  background-color: #19bc9d;
+  height: 100vh;
+}
+.panel{
+  margin: 10% auto;
+  /*height: 300px;*/
+  border: none;
+  background-color: #fff;
+}
+
+.panel-heading{
+  background-color: #1acf70;
+  color: #fff;
+}
+.card{
+  background-color: #fff;
+  margin: -7% auto;
+  padding-top: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.btn-facebook{
+  background-color: dodgerblue !important;
+  border-color: transparent;
+  height: 35px !important;
+}
+
+.btn-google{
+  background-color: firebrick !important;
+  border-color: transparent;
+  height: 35px !important;
+}
+
+.btn{
+  background-color: #1acf70;
+  color: #fff;
+  height: 50px;
+}
+
+.input-group-addon{
+  background-color: #1acf70;
+  color: #fff;
+}
+.panel-footer p>a{
+  text-decoration: none;
+  color: #1acf70;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+small{
+  color: red;
+}
+
+@media only screen and (min-width:900px){
+  .panel{
+    width: 40%;
+  }
+  .card{
+    width: 40%;
+    height: 60px;
+  }
+  .btn-facebook{
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width:900px){
+  .panel{
+    width: 70%;
+  }
+  .card{
+    width: 70%;
+    height: 60px;
+  }
+  .btn-facebook{
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width:600px){
+  .panel{
+    width: 95%;
+  }
+
+  .card{
+    width: 95%;
+    height: 100px;
+  }
+  .btn-facebook{
+    margin-bottom: 5px;
+  }
+}
+
+
+
+@media only screen and (max-width:800px) and (min-width: 600px) {
+  .panel{
+    width: 95%;
+  }
+
+  .card{
+    width: 95%;
+    height: 100px;
+  }
+  .btn-facebook{
+    margin-bottom: 5px;
+  }
+}

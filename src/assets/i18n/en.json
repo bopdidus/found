@@ -1,0 +1,57 @@
+{
+    "title":"The LOST VALLEY",
+    "hint":"When you find a thing which does not belong to you, Submit us and earn money. Also, you can find your things also hier",
+    "navigation":{
+        "profile": "Profil",
+        "login": "Login"
+    },
+    "start_date":"Start date",
+    "end_date": "End date",
+    "view": "View",
+    "back":"Go back",
+    "filter": "Filter",
+    "belong":"This belongs to me",
+    "appointment":{
+        "take":"Take an Appointment",
+        "date":"Date",
+        "time": "Time",
+        "save":"Save"
+    },
+    "login":{
+        "username":"Username",
+        "password":"Password",
+        "login":"Login",
+        "sign_in":"SIGN IN",
+        "not_member":"Not a member"
+    },
+    "register":{
+        "sign_up":"SIGN UP",
+        "name":"Lastname",
+        "surname": "Firstname",
+        "email": "Email",
+        "pass":"Password",
+        "confPass":"Confirm Password",
+        "registration":"Register",
+        "member":"I am already a member"
+    },
+    "errors":{
+        "username":"Syntaxe errors (john.doe@example.com)",
+        "name":"minimum 03 characters",
+        "surname":" minimum 03 characters",
+        "email":"incorrect email address (john.doe@example.com)",
+        "conf":"password and confirm password don't match",
+        "password":"Password must be at least 8 characters"
+
+    },
+    "profil":{
+        "title": "My Profil",
+        "placeholder_name": "Name",
+        "placeholder_surname": "Surname",
+        "placeholder_email": "Email",
+        "placeholder_password": "Password",
+        "edit": "Edit",
+        "change_password": "Change Password",
+        "cancel": "Cancel",
+        "save": "Save"
+    }
+}

@@ -1,0 +1,59 @@
+ul li{
+  list-style: none;
+}
+.divider {
+  height: 2px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+  .checkbox label:before {
+  border-radius: 3px;
+  }
+
+
+    input[type=checkbox]:checked {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px;
+    }
+
+  .btn-task{
+    background-color:#1acf70;
+    color: white;
+  }
+  
+  mat-card{
+   width: 100%;
+   background-color: rgb(248, 246, 246);
+  }
+  .item{
+    margin-bottom: 10px;
+  }
+  mat-card::ng-deep.mat-card-image{
+   height: 120px;
+   object-fit: cover;
+}
+
+mat-card::ng-deep mat-card-content{
+ height: 40px;
+ overflow: hidden;
+ color: black;
+ margin-bottom: -10px;
+ 
+}
+mat-card::ng-deep.mat-card-content::ng-deep p{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+ }
+
+ mat-card::ng-deep mat-card-actions{
+ margin-top: -15px;
+ }

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">{{ 'title' | translate }}</h1>
+            <marquee behavior="" direction="" >{{ 'hint' | translate }}</marquee>
+        </div>
+      </div>
+      <nav>
+          <ul>
+              <li>
+                  <button class="btn btn-link">
+                    <span id="sizing-addon1"><img src="./assets/person.png"/> </span>
+                    <span *ngIf="isConnected == true; then thenBlock else elseBlock "></span>
+                    <ng-template #thenBlock>{{ 'navigation.profile' | translate }} </ng-template>
+                    <ng-template #elseBlock>{{ 'navigation.login' | translate }}</ng-template>
+                  </button>
+              </li>
+              <li>
+                  <select #langSelect (change)="translate.use(langSelect.value)" class="select">
+                    <option *ngFor="let lang of Langs" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                  </select>
+              </li>
+          </ul>
+      </nav>
+</div>
+

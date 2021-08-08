@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+          <h2 class="text-center">{{ 'register.sign_up' | translate }}</h2>
+        </div>
+        <div class="panel-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon" id="sizing-addon1"><img src="./assets/person.png"/> </span>
+                      <input type="text" class="form-control" placeholder="{{ 'register.name' | translate }}" aria-describedby="sizing-addon1"  formControlName="lastName">
+                    </div>
+                    <small *ngIf="registerForm.controls.lastName.invalid && (registerForm.controls.lastName.dirty || registerForm.controls.lastName.touched)" >{{ 'errors.name' | translate }}</small>
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon" id="sizing-addon1"><img src="./assets/person.png"/></span>
+                      <input type="text" class="form-control" placeholder="{{ 'register.surname' | translate }}" aria-describedby="sizing-addon1"  formControlName="firstName">
+                    </div>
+                    <small *ngIf="registerForm.controls.firstName.invalid && (registerForm.controls.firstName.dirty || registerForm.controls.firstName.touched)" >{{ 'errors.surname' | translate }}</small>
+                  </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-12">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon" id="sizing-addon1"><img src=""/><img src="./assets/email.png"/></span>
+                      <input type="email" class="form-control" placeholder="{{ 'register.email' | translate }}" aria-describedby="sizing-addon1"  formControlName="email">
+                    </div>
+                    <small *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)" >{{ 'errors.email' | translate }}</small>
+                  </div>
+            </div>
+
+            <div class="form-row"  >
+                <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon" id="sizing-addon1"><img src=""/><img src="./assets/lock.png"/></span>
+                      <input type="password" class="form-control" placeholder="{{ 'register.pass' | translate }}" aria-describedby="sizing-addon1" formControlName="password">
+                    </div>
+                    <small  *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)">{{ 'errors.password' | translate }}</small>
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                      <span class="input-group-addon" id="sizing-addon1"><img src=""/><img src="./assets/lock.png"/></span>
+                      <input type="password" class="form-control" placeholder="{{ 'register.confPass' | translate }}" aria-describedby="sizing-addon1" formControlName="confirmPass">
+                    </div>
+                    <small *ngIf="registerForm.controls.confirmPass.errors?.matching && registerForm.controls.confirmPass.touched" >{{ 'errors.conf' | translate }}</small>
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-12">
+                    <button class="btn btn-lg form-control" type="submit" [disabled]="!registerForm.valid" >{{ 'register.registration' | translate }}</button>
+                </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="panel-footer">
+          <p class="text-center">{{ 'register.member' | translate }}? <a href="#">{{ 'login.sign_in' | translate }}</a> </p>
+        </div>
+    </div>
+  </div>
+</div>
+

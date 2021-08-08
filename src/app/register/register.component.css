@@ -1,0 +1,40 @@
+.container-fluid{
+  background-color: #19bc9d;
+  height: 100vh;
+}
+.panel{
+  width: 55%;
+  margin: 10% auto;
+  border: none;
+  background-color: #fff;
+}
+small{
+  color: red;
+}
+
+.panel-heading{
+  background-color: #1acf70;
+  color: #fff;
+}
+
+.btn{
+  background-color: #1acf70;
+  color: #fff;
+  height: 50px;
+}
+
+.input-group-addon{
+  background-color: #1acf70;
+  color: #fff;
+}
+.panel-footer p>a{
+  text-decoration: none;
+  color: #1acf70;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media only screen and (max-width:900px){
+  .panel{
+    width: 70%;
+  }
+}

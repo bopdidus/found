@@ -1,0 +1,10 @@
+.col-md-4 img{
+    width: 100%;
+    height: auto;
+}
+
+
+.btn-task{
+    background-color:#1acf70;
+    color: white;
+  }

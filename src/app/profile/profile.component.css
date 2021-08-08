@@ -1,0 +1,16 @@
+
+  
+  .btn{
+    color: #fff;
+    height: 50px;
+  }
+
+  .btn-success{
+    background-color: #1acf70 !important;
+  }
+  
+  .input-group-addon{
+    background-color: #1acf70;
+    color: #fff;
+  }
+  

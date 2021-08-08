@@ -1,0 +1,66 @@
+
+    <div class="container">
+      
+        <h2 class="text-center">{{ 'profil.title' | translate }} </h2>
+        
+        <form action="" method="post">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="sizing-addon1"><img src="./assets/person.png"/> </span>
+                        <input type="text" class="form-control" placeholder="{{ 'profil.placeholder_name' | translate }}" aria-describedby="sizing-addon1">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1"><img src="./assets/person.png"/></span>
+                    <input type="text" class="form-control" placeholder="{{ 'profil.placeholder_surname' | translate }}" aria-describedby="sizing-addon1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-12">
+                    <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1"><img src=""/><img src="./assets/email.png"/></span>
+                    <input type="email" class="form-control" placeholder="{{ 'profil.placeholder_email' | translate }}" aria-describedby="sizing-addon1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1"><img src=""/><img src="./assets/lock.png"/></span>
+                    <input type="password" class="form-control" placeholder="{{ 'profil.placeholder_password' | translate }}" aria-describedby="sizing-addon1">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1"><img src=""/><img src="./assets/lock.png"/></span>
+                    <input type="password" class="form-control" placeholder="{{ 'profil.placeholder_confirm_password' | translate }}" aria-describedby="sizing-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-3">
+                    <button class="btn btn-lg form-control btn-warning">{{ 'profil.edit' | translate }}</button>
+                </div>
+                <div class="form-group col-sm-3 ">
+                    <button class="btn btn-lg form-control btn-primary">{{ 'profil.change_password' | translate }}</button>
+                </div>
+                <div class="form-group col-sm-3 ">
+                    <button class="btn btn-lg form-control btn-danger">{{ 'profil.cancel' | translate }}</button>
+                </div>
+                <div class="form-group col-sm-3">
+                    <button class="btn btn-lg form-control btn-success">{{ 'profil.save' | translate }}</button>
+                </div>
+            </div>
+
+        </form>
+        
+          
+    </div>
+
+  
+  

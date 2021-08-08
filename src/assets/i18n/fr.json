@@ -1,0 +1,57 @@
+{
+    "title":"LA Cité Perdue",
+    "hint":" Lorsque vous trouverey un object qui ne vous appartient pas, rendez le nous et gagner de l'argent. Egalement vous pouvez trouvez vos objets perdus sur notre plateforme",
+    "navigation":{
+        "profile": "Profile",
+        "login": "Se connecter"
+    },
+    "start_date":"Date de début",
+    "end_date": "Date de fin",
+    "view": "Voir",
+    "back":"Retour",
+    "filter": "Trier",
+    "belong":"Ceci m'appartient",
+    "appointment":{
+        "take":"Prendre un rendez-vous",
+        "date":"Date",
+        "time": "Heure",
+        "save":"Enregistrer"
+    },
+    "login":{
+        "username":"Nom d'utilisateur",
+        "password":"Mot de passe",
+        "login":"Se connecter",
+        "sign_in":"Connexion",
+        "not_member":"J'ai pas de compte"
+    },
+    "register":{
+        "sign_up":"Créer un compte",
+        "name":"Nom",
+        "surname": "Prénom",
+        "email": "Email",
+        "pass":"Mot de passe",
+        "confPass":"Confirmation de mot de passe",
+        "registration":"S'incrire",
+        "member":"Je suis déjà un membre"
+    },
+    "errors":{
+        "username":"Syntaxe incorrect (john.doe@example.com)",
+        "name":"minimum 03 caratères",
+        "surname":" minimum 03 caractères",
+        "email":"adresse mail incorrecte (john.doe@example.com)",
+        "conf":"Mot de passe et confirmation de mot de passe ne correspondent pas",
+        "password":"Le mot de passe doit etre au moins 8 characters"
+    },
+    "profil":{
+        "title": "Mon Profile",
+        "placeholder_name": "Nom",
+        "placeholder_surname": "Prénom",
+        "placeholder_email": "Email",
+        "placeholder_password": "Mot de passe",
+        "edit": "Modifier",
+        "change_password": "Changer mot de passe",
+        "cancel": "Annuler",
+        "save": "Enregistrer"
+    }
+
+}
