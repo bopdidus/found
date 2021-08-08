@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin.component';
 
 const routes: Routes = [{ path: '', component: AdminComponent },
-{path:'login', component: LoginComponent },
+{path:'admin/login', component: LoginComponent },
 
 ];
 

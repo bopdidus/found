@@ -3,7 +3,6 @@ import { Validators,FormBuilder } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import { SocialAuthService, FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
-import { SessionStorageService } from 'ngx-webstorage';
 import { UserService } from '../services/user.service';
 
 
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
   loggedIn: boolean;
 
   constructor(public translate: TranslateService, private fb: FormBuilder, private service: UserService,
-    private authService: SocialAuthService, private session:SessionStorageService) {
+    private authService: SocialAuthService) {
     translate.use(translate.currentLang);
    }
 
@@ -30,7 +29,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      this.session.store("user", user);
+      window.sessionStorage.setItem("user", JSON.stringify(user));
       this.loggedIn = (user != null);
     });
   }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule} from './shared/shared/shared.module';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {NgxWebstorageModule} from 'ngx-webstorage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
@@ -29,6 +28,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { environment } from '../environments/environment';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
+import { EncryptInterceptorService } from './services/encrypt-interceptor.service';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -64,7 +65,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HttpClientModule,
     SharedModule,
     SocialLoginModule,
-    NgxWebstorageModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -79,6 +79,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppointmentComponent
   ],
   providers: [
+    
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
@@ -99,7 +100,19 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           console.error(err);
         }
       } as SocialAuthServiceConfig,
-    }
+    },
+
+    /*{
+      provide:HTTP_INTERCEPTORS,
+      useClass:EncryptInterceptorService,
+      multi:true
+    },*/
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptorService,
+      multi:true
+    },
+
   ],
   bootstrap: [AppComponent]
 })
