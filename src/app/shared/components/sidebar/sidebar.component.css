@@ -1,0 +1,15 @@
+.profil-card{
+    text-align: center;
+    padding: 0px 15px 15px 15px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+mat-icon{
+    vertical-align: middle;
+    margin-right: 20px;
+}

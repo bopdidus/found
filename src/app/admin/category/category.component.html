@@ -1,0 +1,24 @@
+<div class="row">
+    <h1>{{ 'admin.category.create' | translate }}</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <fieldset>
+                <div class="form-group">
+                    <label for="">{{ 'admin.category.name' | translate }}</label>
+                    <input type="text" placeholder="name" class="form-control" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="">{{ 'admin.category.father' | translate }}</label>
+                    <select name="" id="" class="form-control" formControlName="father">
+                        <option *ngFor="let c of cats" value="{{c.id}}"> {{ c.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" mat-flat-button color="accent">{{ 'admin.category.save' | translate }}</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

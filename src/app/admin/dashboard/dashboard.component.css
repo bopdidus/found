@@ -1,0 +1,9 @@
+mat-card{
+    text-align: center;
+    background-color: white !important;
+    color: black !important;
+}
+
+mat-card::ng-deep mat-divider{
+    border:1px solid black;
+}

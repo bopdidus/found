@@ -1,0 +1,43 @@
+<mat-nav-list>
+    <div class="profil-card">
+        <div class="header"></div>
+        <h2>John Doe</h2>
+        <h4>Johndoe@example.com.de</h4>
+    </div>
+    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="" srcset="" class="center-block">
+    <mat-divider></mat-divider>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointments">
+        <mat-icon>grid_view</mat-icon>
+        {{ 'admin.sidenav.dashboard' | translate }}
+    </a>
+    <mat-divider></mat-divider>
+    <h2 matSubheader>
+        <mat-icon>contact_mail</mat-icon>
+        {{ 'admin.dashboard.post' | translate }}
+    </h2>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/list-post">{{ 'admin.sidenav.list' | translate }}</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/post">{{ 'admin.sidenav.create' | translate }}</a>
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader> 
+       <mat-icon>person</mat-icon>
+       {{ 'admin.dashboard.user' | translate }}
+    </h2>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/list-user">{{ 'admin.sidenav.list' | translate }}</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/create">{{ 'admin.sidenav.create' | translate }}</a>
+    <mat-divider></mat-divider>
+    <h2 matSubheader> 
+        <mat-icon>category</mat-icon>
+        {{ 'admin.dashboard.category' | translate }}
+     </h2>
+     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/list-category">{{ 'admin.sidenav.list' | translate }}</a>
+     <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin/category">{{ 'admin.sidenav.create' | translate }}</a>
+     <mat-divider></mat-divider>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointments">
+        <mat-icon>event_note</mat-icon>
+        {{ 'admin.dashboard.appointment' | translate }}
+    </a>
+    
+</mat-nav-list>
+

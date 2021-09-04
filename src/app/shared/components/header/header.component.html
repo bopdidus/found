@@ -1,0 +1,38 @@
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)=toogleSideBar()>
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>Lost Valley Admin</span>
+          
+          <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+              <ul fxLayout="row" fxLayoutGap="20px">
+                  <li>
+                    <select #langSelect (change)="translate.use(langSelect.value)" class="select">
+                        <option *ngFor="let lang of Langs" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                    </select>
+                  </li>
+                  <li>
+                     <button mat-icon-button>
+                         <mat-icon>help-outline</mat-icon>
+                     </button>
+                 </li>
+                 <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>
+                          <mat-icon>manage_accounts</mat-icon>
+                          {{ 'admin.sidenav.profil' | translate }}
+                      </button>
+                      <button mat-menu-item>
+                        <mat-icon>exit_to_app</mat-icon>
+                        {{ 'admin.sidenav.sign_out' | translate }}
+                        </button>
+                    </mat-menu>
+                 </li>
+              </ul>
+          </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

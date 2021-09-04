@@ -1,0 +1,22 @@
+mat-divider{
+    border:1px solid black;
+}
+table {
+    margin-top: 20px;
+    width: 100%;
+    color: black;
+    background-color: white;
+}
+mat-checkbox{
+    border: 1px inset black;
+    padding: 0;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding:10px;
+  }
+
+  .example-margin {
+    margin: 0 12px;
+  }

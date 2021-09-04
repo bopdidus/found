@@ -33,6 +33,7 @@
         "confPass":"Confirm Password",
         "registration":"Register",
         "member":"I am already a member"
+        
     },
     "errors":{
         "username":"Syntaxe errors (john.doe@example.com)",
@@ -40,8 +41,8 @@
         "surname":" minimum 03 characters",
         "email":"incorrect email address (john.doe@example.com)",
         "conf":"password and confirm password don't match",
-        "password":"Password must be at least 8 characters"
-
+        "password":"Password must be at least 8 characters",
+        "request": "Something went wrong"
     },
     "profil":{
         "title": "My Profil",
@@ -53,5 +54,45 @@
         "change_password": "Change Password",
         "cancel": "Cancel",
         "save": "Save"
+    },
+    "admin":{
+        "dashboard":{
+            "user": "Users",
+            "post": "Posts",
+            "category":"Categories",
+            "appointment":"Appointments"
+        },
+        "sidenav":{
+            "dashboard":"Dashboard",
+            "create": "Create",
+            "list": "Lists",
+            "profil": "Profil",
+            "sign_out": "Sign Out"
+        },
+        "category":{
+            "create": "Create a category",
+            "name":"Name",
+            "save":"Save",
+            "father":"Father Category",
+            "delete": "Delete",
+            "list":"List of categories",
+            "select": "Select All",
+            "edit": "Edit"
+        },
+        "post":{
+            "title": "Title",
+            "category":"Category",
+            "desc":"Description",
+            "img":"Image",
+            "save":"Save"
+        },
+        "button":{
+            "save":"Save",
+            "edit":"Edit",
+            "filter":"Filter",
+            "view":"View",
+            "search":"Search",
+            "delete":"Delete"
+        }
     }
 }

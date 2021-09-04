@@ -23,12 +23,21 @@ export class ItemService {
   getItems(): Observable<Item>{
     return this.http.get<Item>(Constant.GET_ITEM, httpOptions);
   }
+  getImages(): Observable<any>{
+   const resp = {
+      headers: new HttpHeaders({
+        'responseType':  'blob',
+      })
+    };
+    return this.http.get<Item>(Constant.GET_IMAGES, resp );
+  }
   getItem(id):Observable<Item>{
     return this.http.get<Item>(Constant.GET_ITEM+`/${id}`, httpOptions);
   }
 
-  postItem(): Observable<Item>{
-    return this.http.post<Item>(Constant.GET_ITEM, httpOptions);
+  postItem(post: FormData): Observable<Item>{
+    console.log(post.get("title"))
+    return this.http.post<Item>(Constant.GET_ITEM, post);
   }
 
 }

@@ -12,16 +12,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {path:'login', component: LoginComponent },
   {path:'register', component: RegisterComponent },
-  {path:'App', component: DashboardComponent , children:[
-    { path: '', redirectTo: '/App/home', pathMatch: 'full'},
+  { path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {path:'', component: DashboardComponent , children:[
     {path:'home', component: MainComponent },
     {path:'view/:id', component: ViewComponent, canActivate:[UserGuard] },
     {path:'profile', component: ProfileComponent, canActivate:[UserGuard] },
   ]},
-  { path: '',
-    redirectTo: '/App/home',
-    pathMatch: 'full'
-  },
+  
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: '**', component: PageNotFoundComponent }
 ];

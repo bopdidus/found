@@ -22,8 +22,20 @@ export class CategoryServiceService {
     return this.http.get<Array<Category>>(Constant.GET_CATEGORY, httpOptions);
   }
 
-  postCategory(): Observable<Category>{
-    return this.http.post<Category>(Constant.GET_CATEGORY, httpOptions);
+  postCategory(cate: string, fath?:any): Observable<Category>{
+    
+    if(fath){
+      let obj = '{ "name": "' + cate + '", "father":"'+ fath +'"}';
+      console.log(JSON.parse( JSON.stringify(obj)))
+      return this.http.post<Category>(Constant.GET_CATEGORY, JSON.parse( JSON.stringify(obj)), httpOptions);
+    }else{
+      let obj = '{ "name": "' + cate + '"}';
+      console.log(JSON.parse( JSON.stringify(obj)))
+      return this.http.post<Category>(Constant.GET_CATEGORY, JSON.parse( JSON.stringify(obj)), httpOptions);
+    }
+    
   }
+
+
 
 }

@@ -9,7 +9,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { SharedModule} from './shared/shared/shared.module';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -28,8 +27,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { environment } from '../environments/environment';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
-import { EncryptInterceptorService } from './services/encrypt-interceptor.service';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -47,11 +46,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ViewComponent,
     AppointmentComponent,
     ProfileComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AdminModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatButtonModule,
@@ -63,7 +62,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SharedModule,
     SocialLoginModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
@@ -73,7 +71,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AdminModule
   ],
   entryComponents: [
     AppointmentComponent

@@ -40,7 +40,8 @@
         "surname":" minimum 03 caractères",
         "email":"adresse mail incorrecte (john.doe@example.com)",
         "conf":"Mot de passe et confirmation de mot de passe ne correspondent pas",
-        "password":"Le mot de passe doit etre au moins 8 characters"
+        "password":"Le mot de passe doit etre au moins 8 characters",
+        "request": "Erreur survenu"
     },
     "profil":{
         "title": "Mon Profile",
@@ -52,6 +53,46 @@
         "change_password": "Changer mot de passe",
         "cancel": "Annuler",
         "save": "Enregistrer"
+    },
+    "admin":{
+        "dashboard":{
+            "user": "Utilisateurs",
+            "post": "Objets",
+            "category":"Categories",
+            "appointment":"Rendez-vous"
+        },
+        "sidenav":{
+            "dashboard":"Tableau de board",
+            "create": "Créer",
+            "list": "Listes",
+            "profil": "Profile",
+            "sign_out": "Déconnexion"
+        },
+        "category":{
+            "name":"Nom",
+            "save":"Enregistrér",
+            "father":"Catégorie père",
+            "edit": "Modifier",
+            "delete": "Supprimer",
+            "create": "Créer une categorie",
+            "list":"Liste des categories",
+            "select": "Tout selectionner"
+        },
+        "post":{
+            "title": "Titre",
+            "category":"Categorie",
+            "desc":"Description",
+            "img":"Image",
+            "save":"Enregistrer"
+        },
+        "button":{
+            "save":"Enregistrer",
+            "edit":"Modifier",
+            "filter":"Trier",
+            "view":"Voir",
+            "search":"Recherche",
+            "delete":"Supprimmer"
+        }
     }
 
 }

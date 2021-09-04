@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Validators,FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
-import { CheckPassword } from '../helpers/check-password';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
 
@@ -14,7 +13,7 @@ import { UserService } from '../services/user.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  isError = false
+  isError = 'none'
   newuser: User
   
   constructor(public translate: TranslateService, private service: UserService, private router: Router, private fb: FormBuilder) {
@@ -49,7 +48,7 @@ export class RegisterComponent implements OnInit {
     },
     (error)=>{
       console.log(error);
-      this.isError = true
+      this.isError = 'display'
     })
   }
 

@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
+  sideBarOpen=true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  sideBarToogle(){
+    this.sideBarOpen = !this.sideBarOpen
+  }
 }

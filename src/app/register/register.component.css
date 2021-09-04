@@ -38,3 +38,8 @@ small{
     width: 70%;
   }
 }
+
+.panel-danger{
+  background-color: red !important;
+  color: white !important;
+}
