@@ -29,7 +29,7 @@ export class ListPostComponent implements OnInit {
     })
 
     this._postService.getImages().subscribe((res)=>{
-      console.info(res)
+     this.createImageFromBlob(res)
     },
     (error)=>{
       console.log(error);
@@ -47,4 +47,14 @@ export class ListPostComponent implements OnInit {
       });
     }
 
+    createImageFromBlob(image: Blob) {
+      let reader = new FileReader();
+      reader.addEventListener("load", () => {
+         this.currentImage = reader.result;
+      }, false);
+   
+      if (image) {
+         reader.readAsDataURL(image);
+      }
+   }
 }

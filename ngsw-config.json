@@ -25,5 +25,18 @@
         ]
       }
     }
-  ]
+  ],
+  "dataGroups":[{
+    "name": "found-server",
+    "urls": [
+      "http://localhost:3000/item",
+      "http://localhost:3000/category"
+    ],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "timeout": "10s",
+      "maxAge": "1d",
+      "maxSize": 100
+    }
+  }]
 }

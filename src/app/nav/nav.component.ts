@@ -13,11 +13,14 @@ export class NavComponent implements OnInit {
 
   Langs = ['en', 'fr']
 
-  constructor(public translate: TranslateService, private session:SessionStorageService) { }
+  constructor(public translate: TranslateService,
+     private session:SessionStorageService) { }
 
   ngOnInit(): void {
     (this.session.retrieve("user"))? this.isConnected=false: this.isConnected=true;
     
   }
+  
+  
 
 }

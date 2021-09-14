@@ -23,13 +23,14 @@ export class ItemService {
   getItems(): Observable<Item>{
     return this.http.get<Item>(Constant.GET_ITEM, httpOptions);
   }
-  getImages(): Observable<any>{
+  getImages():Observable<Blob>{
    const resp = {
       headers: new HttpHeaders({
-        'responseType':  'blob',
+        'responseType':  'image/png',
+        'Content-Type':  'image/png',
       })
     };
-    return this.http.get<Item>(Constant.GET_IMAGES, resp );
+    return this.http.get(Constant.GET_IMAGES, { responseType: "blob"} );
   }
   getItem(id):Observable<Item>{
     return this.http.get<Item>(Constant.GET_ITEM+`/${id}`, httpOptions);
@@ -38,6 +39,10 @@ export class ItemService {
   postItem(post: FormData): Observable<Item>{
     console.log(post.get("title"))
     return this.http.post<Item>(Constant.GET_ITEM, post);
+  }
+
+  postSubscription(sub: PushSubscription){
+    return this.http.post(Constant.NOTIFICATIONURL, sub).pipe()
   }
 
 }

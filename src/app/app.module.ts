@@ -14,6 +14,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import {dbConfig} from '../assets/storage';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -63,6 +65,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FormsModule,
     HttpClientModule,
     SocialLoginModule,
+    NgxIndexedDBModule.forRoot(dbConfig),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
