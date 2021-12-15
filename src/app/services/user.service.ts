@@ -17,16 +17,17 @@ const httpOptions = {
 })
 export class UserService {
 
+ 
   constructor(private http: HttpClient) { }
 
-  register(user: User):Observable<User>{
-    let obj = JSON.stringify(user);
+  register(user: User){
+    let obj = JSON.parse(JSON.stringify(user));
     console.log(obj)
-    return this.http.post<User>(Constant.POST_USER_REGISTER, user, httpOptions);
+    return this.http.post(Constant.POST_USER_REGISTER, obj, httpOptions);
   }
 
   login(credential:any): Observable<User>{
-    credential = JSON.stringify(credential);
+    credential = JSON.parse(JSON.stringify(credential));
     console.log(credential)
     return this.http.post<User>(Constant.POST_USER_LOGIN, credential, httpOptions);
   }

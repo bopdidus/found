@@ -3,6 +3,7 @@ import { Validators,FormBuilder } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import { SessionStorageService } from 'ngx-webstorage';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   })
 
 
-  constructor(public translate: TranslateService, private fb: FormBuilder, private service: UserService,
+  constructor(public translate: TranslateService, private fb: FormBuilder, private router: Router,
+    private service: UserService,
     private session:SessionStorageService) {
     translate.use(translate.currentLang); }
 
@@ -27,9 +29,11 @@ export class LoginComponent implements OnInit {
   
   onSubmit(f) {
     console.info(f)
-    this.service.login(f).subscribe((res)=>{
-        console.info(res);
-    })
+    this.service.login(f).subscribe((user:any)=>{
+      console.info(user);
+      window.sessionStorage.setItem("auth-admin", user.token);
+      this.router.navigate(['/admin/dashboard']);
+  })
   }
 
   signOut(): void {

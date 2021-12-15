@@ -15,6 +15,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import{ FlexLayoutModule} from '@angular/flex-layout';
 import{ RouterModule} from '@angular/router';
+import { LoaderComponent } from './components/loader/loader.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -24,9 +26,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    LoaderComponent,
    ],
   imports: [
     CommonModule,
+    MatProgressSpinnerModule,
     MatToolbarModule,
     MatDividerModule,
     MatButtonModule,
@@ -48,7 +52,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   exports:[TranslateModule,  HttpClientModule,HeaderComponent,
     FooterComponent,
-    SidebarComponent]
+    SidebarComponent, LoaderComponent]
 })
 export class SharedModule { 
 }

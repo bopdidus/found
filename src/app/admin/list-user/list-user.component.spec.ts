@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ListUserComponent } from './list-user.component';
 
 describe('ListUserComponent', () => {
@@ -8,7 +9,9 @@ describe('ListUserComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListUserComponent ]
+      declarations: [ ListUserComponent ],
+      imports: [RouterTestingModule],
+      providers: [TranslateModule.forRoot()]
     })
     .compileComponents();
   }));

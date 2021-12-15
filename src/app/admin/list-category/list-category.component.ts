@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {TranslateService} from '@ngx-translate/core';
-import {SelectionModel} from '@angular/cdk/collections';
 import { CategoryServiceService } from 'src/app/services/category-service.service';
 import { Category } from 'src/app/model/category';
 

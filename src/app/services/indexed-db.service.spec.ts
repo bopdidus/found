@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { IndexedDBService } from './indexed-db.service';
 
@@ -6,7 +7,7 @@ describe('IndexedDBService', () => {
   let service: IndexedDBService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ imports: [RouterTestingModule],});
     service = TestBed.inject(IndexedDBService);
   });
 

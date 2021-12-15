@@ -12,18 +12,20 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {path:'login', component: LoginComponent },
   {path:'register', component: RegisterComponent },
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {path:'', component: DashboardComponent , children:[
+  
+  {path:'App', component: DashboardComponent , children:[
     {path:'home', component: MainComponent },
     {path:'view/:id', component: ViewComponent, canActivate:[UserGuard] },
     {path:'profile', component: ProfileComponent, canActivate:[UserGuard] },
   ]},
   
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: '**', component: PageNotFoundComponent }
+  /*{ path: '**', component: PageNotFoundComponent }*/
+  { path: '**',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  
 ];
 
 @NgModule({

@@ -4,17 +4,18 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {dbConfig} from '../assets/storage';
 
 import { AppComponent } from './app.component';
@@ -28,9 +29,12 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { environment } from '../environments/environment';
-import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
-import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { SocialLoginModule} from 'angularx-social-login';
 
+import { SharedModule } from './shared/shared.module'; 
+import { UserService } from './services/user.service';
+import { ItemService } from './services/item.service';
+import { AuthService } from './services/auth.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -61,6 +65,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatPaginatorModule,
     MatDialogModule,
     MatIconModule,
+    SharedModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -81,8 +87,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppointmentComponent
   ],
   providers: [
-    
-    {
+    TranslateService,
+    UserService,
+    ItemService,
+    AuthService,
+    {provide: MatDialogRef, useValue: {hasBackdrop: true}}
+    /*{
       provide: 'SocialAuthServiceConfig',
       useValue: {
         autoLogin: false,
@@ -102,19 +112,15 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           console.error(err);
         }
       } as SocialAuthServiceConfig,
-    },
-
-    /*{
-      provide:HTTP_INTERCEPTORS,
-      useClass:EncryptInterceptorService,
-      multi:true
     },*/
+    /*,
+    
     {
       provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptorService,
       multi:true
     },
-
+*/
   ],
   bootstrap: [AppComponent]
 })

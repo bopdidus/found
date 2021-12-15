@@ -43,3 +43,8 @@ small{
   background-color: red !important;
   color: white !important;
 }
+
+.success {
+  background-color: green !important;
+  color: white !important;
+}

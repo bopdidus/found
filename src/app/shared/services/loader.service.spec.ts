@@ -1,14 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { EncryptInterceptorService } from './encrypt-interceptor.service';
+import { LoaderService } from './loader.service';
 
-describe('EncryptInterceptorService', () => {
-  let service: EncryptInterceptorService;
+describe('LoaderService', () => {
+  let service: LoaderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({ imports: [RouterTestingModule],});
-    service = TestBed.inject(EncryptInterceptorService);
+    service = TestBed.inject(LoaderService);
   });
 
   it('should be created', () => {

@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AdminRoutingModule } from './admin-routing.module';
@@ -24,6 +24,10 @@ import { ListCategoryComponent } from './list-category/list-category.component';
 import { ItemComponent } from './item/item.component';
 import { ListPostComponent } from './list-post/list-post.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { UserService } from '../services/user.service';
+import { ItemService } from '../services/item.service';
+import { AuthService } from '../services/auth.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -58,6 +62,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       },
     }),
 
+  ],
+  providers: [
+    TranslateService,
+    UserService,
+    ItemService,
+    AuthService,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    {provide: MatDialogRef, useValue: {hasBackdrop: true}} 
   ]
 })
 export class AdminModule { }

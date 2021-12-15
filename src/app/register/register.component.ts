@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -12,11 +13,13 @@ import { UserService } from '../services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
+  durationInSeconds = 5;
   registerForm: FormGroup;
   isError = 'none'
   newuser: User
   
-  constructor(public translate: TranslateService, private service: UserService, private router: Router, private fb: FormBuilder) {
+  constructor(public translate: TranslateService, private service: UserService,private _snackBar: MatSnackBar,
+     private router: Router, private fb: FormBuilder) {
     translate.use(translate.currentLang);
 
     this.registerForm = this.fb.group({
@@ -38,21 +41,40 @@ export class RegisterComponent implements OnInit {
   onSubmit(f){
     console.log(f)
     this.newuser.email = f.email;
-    this.newuser.firstname = f.firstname;
-    this.newuser.lastname = f.lastname;
+    this.newuser.firstName = f.firstName;
+    this.newuser.lastName = f.lastName;
     this.newuser.password = f.confirmPass;
 
     this.service.register(this.newuser).subscribe((res)=>{
-      console.log(res);
-      this.router.navigate(['/login']);
+      if(res != null && res != undefined){
+        this.openSnackBar();
+        console.log(res);
+        this.router.navigate(['/login']);
+      }else{
+        this.openSnackBarError();
+      }
     },
     (error)=>{
       console.log(error);
-      this.isError = 'display'
+      this.openSnackBarError()
     })
   }
 
-  private passwordMatch(fielControl: FormControl){
+  openSnackBar() {
+    this._snackBar.open("Registration done!!",  "Close",{
+      duration: this.durationInSeconds * 1000,
+      panelClass:['success']
+    });
+  }
+
+  openSnackBarError() {
+    this._snackBar.open("Some errors occured!!",  "Close",{
+      duration: this.durationInSeconds * 1000,
+      panelClass:['panel-danger']
+    });
+  }
+
+   passwordMatch(fielControl: FormControl){
     return fielControl.value === this.registerForm.controls.password.value? null:{ matching : true}
   }
 

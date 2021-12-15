@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { TranslateService } from '@ngx-translate/core';
+import { LoaderService } from './shared/services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,14 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'found';
-  constructor(private swUpdate: SwUpdate, public translate: TranslateService){
+  title = 'Found';
+  loading$= this.loader.loading$;
+  constructor(private swUpdate: SwUpdate, public translate: TranslateService, private loader: LoaderService){
     translate.use(translate.currentLang);
   }
   
   ngOnInit(){
+    this.title = 'Found';
     this.reloadCache();
   }
 

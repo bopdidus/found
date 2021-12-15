@@ -4,6 +4,7 @@ import {TranslateService} from '@ngx-translate/core';
 import { SocialAuthService, FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   user: SocialUser;
   loggedIn: boolean;
 
-  constructor(public translate: TranslateService, private fb: FormBuilder, private service: UserService,
+  constructor(public translate: TranslateService, private fb: FormBuilder, private router: Router,
+     private service: UserService,
     private authService: SocialAuthService) {
     translate.use(translate.currentLang);
    }
@@ -27,17 +29,20 @@ export class LoginComponent implements OnInit {
    })
 
   ngOnInit(): void {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      window.sessionStorage.setItem("user", JSON.stringify(user));
+    this.authService.authState.subscribe((user:any) => {
+      this.user = user.result;
+      window.sessionStorage.setItem("auth-token", user.token);
       this.loggedIn = (user != null);
     });
   }
 
   onSubmit(f) {
-    console.info(f)
-    this.service.login(f).subscribe((res)=>{
-        console.info(res);
+    console.log(f)
+    this.service.login(f).subscribe((user:any)=>{
+        console.info(user);
+        this.user = user.result;
+        window.sessionStorage.setItem("auth-token", user.token);
+        this.router.navigate(['/App/home']);
     })
   }
 

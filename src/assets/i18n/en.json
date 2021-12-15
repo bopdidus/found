@@ -43,7 +43,8 @@
         "email":"incorrect email address (john.doe@example.com)",
         "conf":"password and confirm password don't match",
         "password":"Password must be at least 8 characters",
-        "request": "Something went wrong"
+        "request": "Something went wrong",
+        "registration":"Some errors occured!!"
     },
     "profil":{
         "title": "My Profil",
@@ -93,7 +94,8 @@
             "filter":"Filter",
             "view":"View",
             "search":"Search",
-            "delete":"Delete"
+            "delete":"Delete",
+            "close": "Close"
         }
     }
 }
