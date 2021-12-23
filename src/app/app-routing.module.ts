@@ -18,12 +18,14 @@ const routes: Routes = [
     {path:'view/:id', component: ViewComponent, canActivate:[UserGuard] },
     {path:'profile', component: ProfileComponent, canActivate:[UserGuard] },
   ]},
-  
+ 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   /*{ path: '**', component: PageNotFoundComponent }*/
-  { path: '**',
+ 
+  { 
+    path: '**',
+    pathMatch: 'full',
     redirectTo: '/login',
-    pathMatch: 'full'
   },
   
 ];

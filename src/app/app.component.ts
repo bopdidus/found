@@ -10,7 +10,7 @@ import { LoaderService } from './shared/services/loader.service';
 })
 export class AppComponent implements OnInit{
   title = 'Found';
-  loading$= this.loader.loading$;
+  
   constructor(private swUpdate: SwUpdate, public translate: TranslateService, private loader: LoaderService){
     translate.use(translate.currentLang);
   }

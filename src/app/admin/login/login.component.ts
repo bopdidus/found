@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
       console.info(user);
       window.sessionStorage.setItem("auth-admin", user.token);
       this.router.navigate(['/admin/dashboard']);
+      
+     
   })
   }
 

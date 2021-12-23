@@ -27,10 +27,11 @@ export class CategoryComponent implements OnInit {
     this.loadData()
   }
 
-  onSubmit(){
-    this.service.postCategory(this.categoryForm.value.name, this.categoryForm.value.father).subscribe((res)=>{
+  onSubmit(f){
+    this.service.postCategory(f).subscribe((res)=>{
       console.info(res, "save with success")
-      this.categoryForm.value.name = "";
+      this.categoryForm.reset();
+      this.cats.push(res);
     }, (error)=>{
       console.log(error, "there is an error")
     })

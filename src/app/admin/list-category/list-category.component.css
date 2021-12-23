@@ -4,7 +4,7 @@ mat-divider{
 table {
     margin-top: 20px;
     width: 100%;
-    color: black;
+    color: black !important;
     background-color: white;
 }
 mat-checkbox{
@@ -15,8 +15,37 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     padding:10px;
+    color: black !important;
   }
 
   .example-margin {
     margin: 0 12px;
   }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.overlay{
+    height:100vh;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.286);
+    z-index:    10;
+    top:        0; 
+    left:       0; 
+    position:   fixed;
+  }
+
+  :host ::ng-deep .track circle{       
+    stroke-opacity: 0.3 !important;
+}
+
+.bg-snackbar{
+  background-color: #45f542 !important;
+  color: #fff;
+}

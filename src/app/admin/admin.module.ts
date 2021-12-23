@@ -12,9 +12,11 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
@@ -28,6 +30,7 @@ import { UserService } from '../services/user.service';
 import { ItemService } from '../services/item.service';
 import { AuthService } from '../services/auth.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { LoaderInterceptor } from '../interceptors/loader.interceptor';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -46,10 +49,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AdminRoutingModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     MatIconModule,
     MatTableModule,
     MatListModule,
     MatDividerModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatPaginatorModule,
     MatCheckboxModule,
@@ -69,7 +74,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ItemService,
     AuthService,
     { provide: MAT_DIALOG_DATA, useValue: {} },
-    {provide: MatDialogRef, useValue: {hasBackdrop: true}} 
+    {provide: MatDialogRef, useValue: {hasBackdrop: true}},
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ]
 })
 export class AdminModule { }

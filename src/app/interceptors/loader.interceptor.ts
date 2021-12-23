@@ -3,7 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoaderService } from '../shared/services/loader.service';
@@ -14,14 +15,25 @@ export class LoaderInterceptor implements HttpInterceptor {
 
   constructor(public _loaderService: LoaderService) {}
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this._loaderService.show();
-    return next.handle(request).pipe(
-      finalize(
-        ()=>{
-          this._loaderService.hide();
-        }
-      )
-    );
-  }
+ 
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
+    if(req.headers.get("intercepts")){
+      this._loaderService.isLoading.next(true);
+        return next
+            .handle(req)
+            .pipe(  finalize(
+              ()=>{
+                this._loaderService.isLoading.next(false)
+              }
+            ));
+
+    }else{
+      return next.handle(req);
+    }
+    
+}
+  
+
 }

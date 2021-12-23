@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
@@ -70,7 +70,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SocialLoginModule,
     NgxIndexedDBModule.forRoot(dbConfig),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
@@ -92,27 +91,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ItemService,
     AuthService,
     {provide: MatDialogRef, useValue: {hasBackdrop: true}}
-    /*{
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              'AIzaSyACSXQcwY2xhwPECyoytn9e2u52tCyJ_50'
-            )
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('506449300425737')
-          }
-        ],
-        onError: (err) => {
-          console.error(err);
-        }
-      } as SocialAuthServiceConfig,
-    },*/
+  
     /*,
     
     {

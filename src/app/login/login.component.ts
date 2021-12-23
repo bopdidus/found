@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators,FormBuilder } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
-import { SocialAuthService, FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   constructor(public translate: TranslateService, private fb: FormBuilder, private router: Router,
      private service: UserService,
-    private authService: SocialAuthService) {
+    private authService: AuthService) {
     translate.use(translate.currentLang);
    }
 
@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
    })
 
   ngOnInit(): void {
-    this.authService.authState.subscribe((user:any) => {
+   /* this.authService.authState.subscribe((user:any) => {
       this.user = user.result;
       window.sessionStorage.setItem("auth-token", user.token);
       this.loggedIn = (user != null);
-    });
+    });*/
   }
 
   onSubmit(f) {
@@ -47,13 +47,13 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    /*this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);*/
   }
  
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(res=>{
+    /*this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(res=>{
       console.log(res)
-    });
+    });*/
   }
  
   signInWithLinkedIN(): void {
@@ -61,10 +61,10 @@ export class LoginComponent implements OnInit {
   }
  
   signOut(): void {
-    this.authService.signOut();
+    //this.authService.signOut();
   }
   refreshToken(): void {
-    this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
+    //this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
   }
 
 }

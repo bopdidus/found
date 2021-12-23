@@ -1,4 +1,6 @@
-export const GET_CATEGORY = "http://localhost:3000/category";
+export const GET_CATEGORY = "http://localhost:3000/categories";
+export const DELETE_CATEGORY = "http://localhost:3000/category";
+export const POST_CATEGORY = "http://localhost:3000/category";
 export const GET_ITEM = "http://localhost:3000/item";
 export const GET_IMAGES = "http://localhost:3000/images";
 export const GET_ITEM_ID = "http://localhost:3000/item/:id";
