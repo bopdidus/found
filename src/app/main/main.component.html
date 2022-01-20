@@ -41,7 +41,7 @@
     <div class="row" >
       <div class="col-md-4 item" *ngFor="let item of items">
         <mat-card>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <img mat-card-image [src]="getSantizeUrl(item.image)" alt="Photo of a Shiba Inu">
           <mat-card-content>
             <h4>{{item.title}}</h4>
             <p style="text-overflow: ellipsis;">

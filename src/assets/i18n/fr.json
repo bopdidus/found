@@ -23,7 +23,8 @@
         "password":"Mot de passe",
         "login":"Se connecter",
         "sign_in":"Connexion",
-        "not_member":"J'ai pas de compte"
+        "not_member":"J'ai pas de compte",
+        "login_succes":"Connexion avec succes"
     },
     "register":{
         "sign_up":"Créer un compte",
@@ -43,7 +44,8 @@
         "conf":"Mot de passe et confirmation de mot de passe ne correspondent pas",
         "password":"Le mot de passe doit etre au moins 8 characters",
         "request": "Erreur survenu",
-        "registration":"Certains erreurs ont survenu!!"
+        "registration":"Certains erreurs ont survenu!!",
+        "error_login": "Données de connexion incorrectes"
     },
     "profil":{
         "title": "Mon Profile",
@@ -62,6 +64,12 @@
             "post": "Objets",
             "category":"Categories",
             "appointment":"Rendez-vous"
+        },
+        "user":{
+            "save": "Nouvel utilisateur enregistré avecc succès",
+            "post": "Posts",
+            "category":"Categories",
+            "appointment":"Appointments"
         },
         "sidenav":{
             "dashboard":"Tableau de board",
@@ -85,7 +93,9 @@
             "category":"Categorie",
             "desc":"Description",
             "img":"Image",
-            "save":"Enregistrer"
+            "date":"Date de publication",
+            "save":"Enregistrer",
+            "save_request":" Enregistrement avec succes"
         },
         "button":{
             "save":"Enregistrer",

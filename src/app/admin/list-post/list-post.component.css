@@ -1,3 +1,32 @@
 mat-selection-list{
     background-color: rgba(0, 0, 0, 0.6);
 }
+
+.row img{
+    width: 100px;
+    height: 100px;
+}
+
+.table-design{
+    color: white;
+    line-height: 15px;
+    border-collapse: collapse;
+    perspective-origin: 30% 30%;
+    box-shadow: 0 8px 4px 0 rgba(0,0,0,0.2);
+    padding: 8px;
+    border-radius: 5px;
+}
+.table-design tr:nth-child(even){background-color: #f2f2f2; color: black;}
+
+.table-design tr:hover {background-color: #ddd; color: black;}
+
+.table-design, th, td{
+    border: 1.5px solid white;
+    
+}
+.table-design td, .table-design th{
+    padding-top: 12px;
+    padding-left: 8px;
+    padding-bottom: 12px;
+    text-align: left;
+}

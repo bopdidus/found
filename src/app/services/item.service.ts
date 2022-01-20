@@ -20,18 +20,21 @@ export class ItemService {
 
   constructor(private http: HttpClient) { }
 
-  getItems(): Observable<Item>{
-    return this.http.get<Item>(Constant.GET_ITEM, httpOptions);
-  }
-  getImages():Observable<Blob>{
-   const resp = {
+  getItems(): Observable<any> {
+    const resp = {
       headers: new HttpHeaders({
         'responseType':  'image/png',
         'Content-Type':  'image/png',
-      })
+      }),
+      responseType: "blob"
     };
+    return this.http.get(Constant.GET_ITEM, httpOptions);
+  }
+  getImages(): Observable<any>{
+   
     return this.http.get(Constant.GET_IMAGES, { responseType: "blob"} );
   }
+
   getItem(id):Observable<Item>{
     return this.http.get<Item>(Constant.GET_ITEM+`/${id}`, httpOptions);
   }

@@ -36,16 +36,37 @@
 <br>
 <div class="row">
     <div class="col-sm-12">
-        <mat-selection-list color="warn">
-            <mat-list-item> {{ 'admin.post.title' | translate }}</mat-list-item>
-            <mat-divider></mat-divider>
-            <!--<ng-container *ngFor="let i of dataItems">
-                <mat-list-option >{{i.title}}</mat-list-option>
-                <mat-divider></mat-divider>
-            </ng-container>-->
-        </mat-selection-list>
+        <table class="table table-design" >
+            <tr>
+                <th>{{ 'admin.post.title' | translate }}</th>
+                <th>{{ 'admin.post.desc' | translate }}</th>
+                <th>{{ 'admin.post.date' | translate }}</th>
+                <th>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+                        </mat-checkbox>
+                </th>
+            </tr>
+            <tr *ngFor="let p of posts" >
+                <td> {{ p.title}} </td>
+                <td> {{ p.comments}} </td>
+                <td> {{ p.publishedDate}} </td>
+                <td>
+                    <mat-checkbox 
+                          (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(p) : null"
+                          [checked]="selection.isSelected(p)"
+                          [aria-label]="checkboxLabel(p)"
+                         >
+                        </mat-checkbox>
+                </td>
+            </tr>
+        </table>
+        
     </div>
 </div>
-<div class="row" >
+<!--<div class="row" >
     <img [src]="currentImage" alt=" ici doit avoir la photo">
-</div>
+</div>-->

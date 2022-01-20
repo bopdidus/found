@@ -9,6 +9,7 @@ import { ItemComponent } from './item/item.component';
 import { ListPostComponent } from './list-post/list-post.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { AdminGuard } from '../guards/admin.guard';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent, children:[
@@ -18,6 +19,7 @@ const routes: Routes = [
     {path:'list-category', component: ListCategoryComponent },
     {path:'list-post', component: ListPostComponent },
     {path:'list-user', component: ListUserComponent },
+    {path:'user/create', component: UserComponent },
   ], canActivate:[AdminGuard] },
 {path:'admin/login', component: LoginComponent },
 { path: '**',

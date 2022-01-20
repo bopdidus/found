@@ -6,6 +6,11 @@ import { ItemService } from '../services/item.service';
 import { Router } from '@angular/router';
 import { SwPush, SwUpdate } from '@angular/service-worker';
 import * as Constant from '../../assets/constants/url.constant';
+import { Item } from '../model/item';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HttpErrorResponse } from '@angular/common/http';
+import { SnackbarComponent } from '../shared/components/snackbar/snackbar.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -22,17 +27,50 @@ export class MainComponent implements OnInit {
   cats: [any] = [""];
   items:any;
   sousCats:[any] = [""];
+  images = [];
   private liste: [any];
   
   constructor(public translate: TranslateService, private catService:CategoryServiceService,
      private router: Router,
+     private _snackBar: MatSnackBar,
      private itService: ItemService,
      private swUpdate: SwUpdate,
+     private sanitizer: DomSanitizer,
      private swPush: SwPush) {
     translate.use(translate.currentLang)
    }
 
   ngOnInit(): void {
+    /*this._snackBar.openFromComponent(SnackbarComponent, {
+      data: { comp: "Login", type:1},
+      panelClass: 'success',
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+    });*/
+    this.getCategories();
+    this.getItems();
+    
+  }
+
+  getItems(){
+    this.itService.getItems().subscribe(item=>{
+      console.log(item)
+      this.items = item;
+
+    },
+    (err: HttpErrorResponse)=>{
+      this._snackBar.openFromComponent(SnackbarComponent, {
+          data: { comp: "Item", type:0},
+          panelClass: 'panel-danger',
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+       }
+    )
+  }
+
+
+  getCategories(){
     this.catService.getCategory().subscribe(cat=> {
       console.log(cat)
       this.cats.pop();
@@ -47,13 +85,22 @@ export class MainComponent implements OnInit {
       }
       this.liste = Object.assign([], this.sousCats);
     } );
-
-    this.itService.getItems().subscribe(item=>{
-      console.log(item)
-      this.items = item;
-    });
   }
 
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+      return reader.result;
+    }, false);
+ 
+    if (image) {
+       reader.readAsDataURL(image);
+    }
+ }
+
+ getSantizeUrl(url : string) {
+  return this.sanitizer.bypassSecurityTrustUrl(Constant.PUBLIC_RESOURCES +  url);
+}
   currentCategory(cat){
     console.log(cat);
     this.sousCats.length=1;

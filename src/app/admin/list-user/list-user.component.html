@@ -21,10 +21,10 @@
 <br>
 <div class="row">
     <div class="col-md-10">
-        <input type="search" class="form-control" placeholder="{{ 'admin.button.search' | translate }}">
+        <input #search type="search" class="form-control" placeholder="{{ 'admin.button.search' | translate }}"  (keyup)="searchFunction(search.value)">
     </div>
     <div class="col-md-2">
-        <button mat-flat-button color="primary" >
+        <button mat-flat-button color="primary"  (click)="applySearch()">
             <mat-icon>search</mat-icon>
             {{ 'admin.button.filter' | translate }}
         </button>
@@ -33,12 +33,32 @@
 <br>
 <div class="row">
       
-<table class="table table-bordered">
+<table class="table table-design" >
     <tr>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
-        <th></th>
+        <th>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()"
+                  [aria-label]="checkboxLabel()">
+                </mat-checkbox>
+        </th>
+    </tr>
+    <tr *ngFor="let u of users" >
+        <td> {{ u.firstName}} </td>
+        <td> {{ u.lastName}} </td>
+        <td> {{ u.email}} </td>
+        <td>
+            <mat-checkbox 
+                  (click)="$event.stopPropagation()"
+                  (change)="$event ? selection.toggle(u) : null"
+                  [checked]="selection.isSelected(u)"
+                  [aria-label]="checkboxLabel(u)"
+                 >
+                </mat-checkbox>
+        </td>
     </tr>
 </table>
 </div>

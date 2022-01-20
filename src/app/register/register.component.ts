@@ -11,6 +11,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
   durationInSeconds = 5;

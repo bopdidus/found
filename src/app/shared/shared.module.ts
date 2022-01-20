@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
@@ -17,6 +18,7 @@ import{ FlexLayoutModule} from '@angular/flex-layout';
 import{ RouterModule} from '@angular/router';
 import { LoaderComponent } from './components/loader/loader.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -27,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterComponent,
     SidebarComponent,
     LoaderComponent,
+    SnackbarComponent,
    ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatDividerModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     HttpClientModule,
     MatMenuModule,
@@ -49,6 +53,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       },
     }),
     
+  ],
+  providers: [
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ],
   exports:[TranslateModule,  HttpClientModule,HeaderComponent,
     FooterComponent,

@@ -1,0 +1,9 @@
+.table-design tr{
+    border: 1px solid gainsboro;
+    padding: 5px;
+}
+
+.table-design tr  td, .table-design tr  th{
+    border: 1px solid gainsboro;
+    padding: 5px;
+}

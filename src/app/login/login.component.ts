@@ -5,6 +5,9 @@ import { SocialUser } from "angularx-social-login";
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { SnackbarComponent } from '../shared/components/snackbar/snackbar.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -17,7 +20,8 @@ export class LoginComponent implements OnInit {
   user: SocialUser;
   loggedIn: boolean;
 
-  constructor(public translate: TranslateService, private fb: FormBuilder, private router: Router,
+  constructor(public translate: TranslateService,private _snackBar: MatSnackBar,
+     private fb: FormBuilder, private router: Router,
      private service: UserService,
     private authService: AuthService) {
     translate.use(translate.currentLang);
@@ -43,7 +47,16 @@ export class LoginComponent implements OnInit {
         this.user = user.result;
         window.sessionStorage.setItem("auth-token", user.token);
         this.router.navigate(['/App/home']);
-    })
+      },
+      (err:HttpErrorResponse)=>{
+        this._snackBar.openFromComponent(SnackbarComponent, {
+          data: { comp: "Login", type:0},
+          panelClass: 'panel-danger',
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+      })
+
   }
 
   signInWithGoogle(): void {

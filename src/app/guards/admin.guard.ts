@@ -9,8 +9,8 @@ export class AdminGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log(window.sessionStorage.getItem("auth-admin"),"test")
-      return (window.sessionStorage.getItem("auth-admin")?true:false);
+      console.log(window.sessionStorage.getItem("auth-token"),"test")
+      return (window.sessionStorage.getItem("auth-token")?true:false);
   }
   
 }

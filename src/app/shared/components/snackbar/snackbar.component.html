@@ -1,0 +1,52 @@
+<div *ngIf="data.comp == 'Login' && data.type == 0" style="display: flex; ">
+    <p style="width: 100%;">
+        <span style="justify-content: center;">{{ 'errors.error_login' | translate }}</span>
+        <button mat-icon-button (click)="snackBarRef.dismiss()" style="float: right;">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>   
+</div>
+<div *ngIf="data.comp == 'Login' && data.type == 1" style="display: flex; ">
+    <p style="width: 100%;">
+        <span style="justify-content: center;">{{ 'login.login_succes' | translate }}</span>
+        <button mat-icon-button (click)="snackBarRef.dismiss()" style="float: right;">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>   
+</div>
+
+<div *ngIf="data.comp == 'Item' && data.type == 0" style="display: flex; ">
+    <p style="width: 100%;">
+        <span style="justify-content: center;">{{ 'errors.registration' | translate }}</span>
+        <button mat-icon-button (click)="snackBarRef.dismiss()" style="float: right;">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>   
+</div>
+
+<div *ngIf="data.comp == 'Item' && data.type == 1" style="display: flex; ">
+    <p style="width: 100%;">
+        <span style="justify-content: center;">{{ 'admin.post.save_request' | translate }}</span>
+        <button mat-icon-button (click)="snackBarRef.dismiss()" style="float: right;">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>   
+</div>
+
+<div *ngIf="data.comp == 'User' && data.type == 0" style="display: flex; ">
+    <p style="width: 100%;">
+        <span style="justify-content: center;">{{ 'errors.registration' | translate }}</span>
+        <button mat-icon-button (click)="snackBarRef.dismiss()" style="float: right;">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>   
+</div>
+
+<div *ngIf="data.comp == 'User' && data.type == 1" style="display: flex; ">
+    <p style="width: 100%;">
+        <span style="justify-content: center;">{{ 'admin.user.save' | translate }}</span>
+        <button mat-icon-button (click)="snackBarRef.dismiss()" style="float: right;">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>   
+</div>

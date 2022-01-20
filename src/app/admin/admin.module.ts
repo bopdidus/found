@@ -31,6 +31,7 @@ import { ItemService } from '../services/item.service';
 import { AuthService } from '../services/auth.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoaderInterceptor } from '../interceptors/loader.interceptor';
+import { UserComponent } from './user/user.component';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -38,7 +39,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AdminComponent, LoginComponent, DashboardComponent, CategoryComponent, ListCategoryComponent, ItemComponent, ListPostComponent, ListUserComponent],
+  declarations: [AdminComponent, LoginComponent, DashboardComponent, CategoryComponent, ListCategoryComponent, ItemComponent, ListPostComponent, ListUserComponent, UserComponent],
   imports: [
     CommonModule,
     SharedModule,

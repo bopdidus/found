@@ -23,7 +23,8 @@
         "password":"Password",
         "login":"Login",
         "sign_in":"SIGN IN",
-        "not_member":"Not a member"
+        "not_member":"Not a member",
+        "login_succes":"Login with success"
     },
     "register":{
         "sign_up":"SIGN UP",
@@ -44,7 +45,8 @@
         "conf":"password and confirm password don't match",
         "password":"Password must be at least 8 characters",
         "request": "Something went wrong",
-        "registration":"Some errors occured!!"
+        "registration":"Some errors occured!!",
+        "error_login": "The Credential is not correct"
     },
     "profil":{
         "title": "My Profil",
@@ -60,6 +62,12 @@
     "admin":{
         "dashboard":{
             "user": "Users",
+            "post": "Posts",
+            "category":"Categories",
+            "appointment":"Appointments"
+        },
+        "user":{
+            "save": "New user registered with succes",
             "post": "Posts",
             "category":"Categories",
             "appointment":"Appointments"
@@ -85,8 +93,10 @@
             "title": "Title",
             "category":"Category",
             "desc":"Description",
+            "date":" Published Date",
             "img":"Image",
-            "save":"Save"
+            "save":"Save",
+            "save_request":"Save done with success!!!"
         },
         "button":{
             "save":"Save",

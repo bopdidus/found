@@ -26,7 +26,7 @@
                           <mat-icon>manage_accounts</mat-icon>
                           {{ 'admin.sidenav.profil' | translate }}
                       </button>
-                      <button mat-menu-item>
+                      <button mat-menu-item (click)="sign_out()" >
                         <mat-icon>exit_to_app</mat-icon>
                         {{ 'admin.sidenav.sign_out' | translate }}
                         </button>

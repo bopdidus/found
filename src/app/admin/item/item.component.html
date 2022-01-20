@@ -21,8 +21,8 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <input type='file' (change)="readURL($event);" formControlName="image"/>
-                <img id="blah" [src]="imageSrc || 'http://placehold.it/180'" alt="your image" />              
+                <input type='file' (change)="readURL($event);" formControlName="image" style="width: 220px;"/>
+                <img id="blah" [src]="imageSrc || 'https://via.placeholder.com/150'" alt="your image" />              
             </div>
         </form>
     </div>

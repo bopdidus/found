@@ -5,4 +5,5 @@ export interface Item{
     comments: string;
     publishedDate: Date;
     category: Category;
+    image:any;
 }
