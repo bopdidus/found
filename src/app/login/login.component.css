@@ -2,20 +2,23 @@
   background-color: #19bc9d;
   height: 100vh;
 }
-.panel{
-  margin: 10% auto;
+.container{
+  padding: 7%;
+}
+.card{
+  margin:auto;
   /*height: 300px;*/
   border: none;
   background-color: #fff;
 }
 
-.panel-heading{
+.card-header{
   background-color: #1acf70;
   color: #fff;
 }
-.card{
+.card-social{
   background-color: #fff;
-  margin: -7% auto;
+  margin:  auto;
   padding-top: 12px;
   padding-left: 5px;
   padding-right: 5px;
@@ -39,11 +42,11 @@
   height: 50px;
 }
 
-.input-group-addon{
+.input-group-text{
   background-color: #1acf70;
   color: #fff;
 }
-.panel-footer p>a{
+.card-footer p>a{
   text-decoration: none;
   color: #1acf70;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,10 +56,10 @@ small{
 }
 
 @media only screen and (min-width:900px){
-  .panel{
+  .card{
     width: 40%;
   }
-  .card{
+  .card-social{
     width: 40%;
     height: 60px;
   }
@@ -66,10 +69,10 @@ small{
 }
 
 @media only screen and (max-width:900px){
-  .panel{
+  .card{
     width: 70%;
   }
-  .card{
+  .card-social{
     width: 70%;
     height: 60px;
   }
@@ -79,11 +82,11 @@ small{
 }
 
 @media only screen and (max-width:600px){
-  .panel{
+  .card{
     width: 95%;
   }
 
-  .card{
+  .card-social{
     width: 95%;
     height: 100px;
   }
@@ -95,11 +98,11 @@ small{
 
 
 @media only screen and (max-width:800px) and (min-width: 600px) {
-  .panel{
+  .card{
     width: 95%;
   }
 
-  .card{
+  .card-social{
     width: 95%;
     height: 100px;
   }

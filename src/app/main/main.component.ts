@@ -41,12 +41,7 @@ export class MainComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    /*this._snackBar.openFromComponent(SnackbarComponent, {
-      data: { comp: "Login", type:1},
-      panelClass: 'success',
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });*/
+    /*;*/
     this.getCategories();
     this.getItems();
     
@@ -87,16 +82,19 @@ export class MainComponent implements OnInit {
     } );
   }
 
-  createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener("load", () => {
-      return reader.result;
-    }, false);
- 
-    if (image) {
-       reader.readAsDataURL(image);
+  currentState(event){
+    if(event.target.checked){
+      let tab = [];
+      this.items.forEach(elt => {
+          if(elt.categoryId == event.target.value){
+            tab.push(elt);
+          }
+          console.log('normal')
+      });
+      console.log('sauter')
+      this.items = tab;
     }
- }
+  }
 
  getSantizeUrl(url : string) {
   return this.sanitizer.bypassSecurityTrustUrl(Constant.PUBLIC_RESOURCES +  url);

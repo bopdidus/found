@@ -46,6 +46,12 @@ export class LoginComponent implements OnInit {
         console.info(user);
         this.user = user.result;
         window.sessionStorage.setItem("auth-token", user.token);
+        this._snackBar.openFromComponent(SnackbarComponent, {
+          data: { comp: "Login", type:1},
+          panelClass: 'success',
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+        });
         this.router.navigate(['/App/home']);
       },
       (err:HttpErrorResponse)=>{

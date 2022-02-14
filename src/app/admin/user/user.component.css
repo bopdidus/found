@@ -1,5 +1,5 @@
 
-  .panel{
+  .card{
     width: 55%;
     margin: 3% auto;
     border: none;
@@ -9,7 +9,7 @@
     color: red;
   }
   
-  .panel-heading{
+  .card-header{
     background-color: #6A1B9A;
     color: #fff;
   }
@@ -20,18 +20,18 @@
     height: 50px;
   }
   
-  .input-group-addon{
+  .input-group-text{
     background-color: #AA00FF;
     color: #fff;
   }
-  .panel-footer p>a{
+  .card-footer p>a{
     text-decoration: none;
     color: #AA00FF;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   @media only screen and (max-width:900px){
-    .panel{
+    .card{
       width: 70%;
     }
   }

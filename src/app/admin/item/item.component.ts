@@ -48,6 +48,7 @@ export class ItemComponent implements OnInit {
       formData.append("comments", f.comments);
       formData.append("category", f.category);
       formData.append("image", this.file);
+      formData.append("categoryId", f.category);
     
     this._postService.postItem(formData).subscribe((res: any)=>{
       console.log(res)

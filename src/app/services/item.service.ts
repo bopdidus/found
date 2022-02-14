@@ -41,7 +41,14 @@ export class ItemService {
 
   postItem(post: FormData): Observable<Item>{
     console.log(post.get("title"))
-    return this.http.post<Item>(Constant.GET_ITEM, post);
+    let httpOption = {
+      headers: new HttpHeaders({
+        'intercepts': 'intercepts',
+        'auth-token':window.sessionStorage.getItem("auth-token"),
+        'auth-email': window.sessionStorage.getItem('auth-email')
+      })
+    }
+    return this.http.post<Item>(Constant.GET_ITEM, post, httpOption);
   }
 
   postSubscription(sub: PushSubscription){

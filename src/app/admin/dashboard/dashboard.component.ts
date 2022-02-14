@@ -15,12 +15,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._snackBar.openFromComponent(SnackbarComponent, {
-      data: { comp: "Login", type:1},
-      panelClass: 'success',
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });
+    
   }
 
 }

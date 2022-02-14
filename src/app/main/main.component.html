@@ -10,8 +10,9 @@
 </div>
 <div class="row" style="padding-bottom:10px; ">
   <div class="col-md-3">
-      <div class="checkbox" *ngFor="let s of sousCats">
-        <label><input type="checkbox" value="{{s.name}}" class="checkbox-success">{{s.name}}</label>
+      <div class="form-check" *ngFor="let s of sousCats">
+        <input id="box" type="checkbox" value="{{s.id}}" class="form-check-input" (change)="currentState($event)" >
+        <label for="box" class="form-check-label">{{s.name}}</label>
       </div>
      
   </div>
@@ -59,11 +60,13 @@
     </div>
    
     <div class="row">
-      <mat-paginator [length]="15"
-               [pageSize]="3"
-               [pageSizeOptions]="[3, 6, 9, 12]"
-               (page)="pageEvent = $event">
-      </mat-paginator>
+      <div class="col-md-12">
+        <mat-paginator [length]="15"
+          [pageSize]="3"
+          [pageSizeOptions]="[3, 6, 9, 12]"
+          (page)="pageEvent = $event">
+        </mat-paginator>
+      </div>
     </div>
     
   </div>

@@ -6,4 +6,5 @@ export interface Item{
     publishedDate: Date;
     category: Category;
     image:any;
+    categoryId: number;
 }

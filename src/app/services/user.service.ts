@@ -48,7 +48,15 @@ export class UserService {
   }
 
   getUsers():Observable<Array<User>>{
-    return this.http.get<Array<User>>(Constant.GET_USERS, httpOptions);
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'intercepts': 'intercepts',
+        'auth-token':window.sessionStorage.getItem("auth-token"),
+        'auth-email': window.sessionStorage.getItem('auth-email')
+      })
+    }
+    return this.http.get<Array<User>>(Constant.GET_USERS, httpOption);
   }
 
   HashPassword(pass:string){

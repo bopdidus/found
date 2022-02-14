@@ -1,15 +1,16 @@
 .container-fluid{
     background-color: #19bc9d;
     height: 100vh;
+    padding-top: 7%;
   }
-  .panel{
-    margin: 10% auto;
+  .card{
+    margin: auto;
     /*height: 300px;*/
     border: none;
     background-color: #fff;
   }
   
-  .panel-heading{
+  .card-header{
     background-color: #1acf70;
     color: #fff;
   }
@@ -21,11 +22,11 @@
     height: 50px;
   }
   
-  .input-group-addon{
+  .input-group-text{
     background-color: #1acf70;
     color: #fff;
   }
-  .panel-footer p>a{
+  .card-footer p>a{
     text-decoration: none;
     color: #1acf70;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -35,21 +36,21 @@
   }
   
   @media only screen and (min-width:900px){
-    .panel{
+    .card{
       width: 40%;
     }
 
   }
   
   @media only screen and (max-width:900px){
-    .panel{
+    .card{
       width: 70%;
     }
 
   }
   
   @media only screen and (max-width:600px){
-    .panel{
+    .card{
       width: 95%;
     }
 
@@ -58,7 +59,7 @@
   
   
   @media only screen and (max-width:800px) and (min-width: 600px) {
-    .panel{
+    .card{
       width: 95%;
     }
   }
