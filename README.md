@@ -1,5 +1,8 @@
 # Found
 
+## Overview
+This is a web application, where we can see all lost things. For example, if someone (A) lost his ID Card and somebody(B) get it. B can create an account and post the ID CARD. A must just look it with filters(the place and the interval of Datetime). When A see the post, he has to make an appointment with B in order to get his ID CARD. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
 
 ## Development server
